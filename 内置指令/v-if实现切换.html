@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="app">
+      <div v-if="type==='name'">
+        用户名<input type="text" placeholder="请输入用户名" />
+      </div>
+      <div v-else>密码<input type="text" placeholder="请输入密码" /></div>
+      <button @click="toggle">切换</button>
+    </div>
+    <script src="https://cdn.bootcdn.net/ajax/libs/vue/2.5.16/vue.js"></script>
+    <script>
+      var app = new Vue({
+        el: "#app",
+        data: {
+          type: "name",
+        },
+        methods: {
+          toggle: function () {
+            this.type = this.type === "name" ? "password" : "name";
+          },
+        },
+      });
+    </script>
+  </body>
+</html>
